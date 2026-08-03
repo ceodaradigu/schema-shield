@@ -59,7 +59,7 @@ Agent Context Kit `get_lineage` is not part of the successful claim. In this loc
 
 | External requirement | Status | What would verify it |
 | --- | --- | --- |
-| Public Apache-2.0 repository | **PENDING** | Public URL opened without authentication and license visible at repository top/About |
+| Public Apache-2.0 repository | **VERIFIED** | [github.com/ceodaradigu/schema-shield](https://github.com/ceodaradigu/schema-shield) is public; raw README/LICENSE returned HTTP 200 and GitHub reports SPDX `Apache-2.0` |
 | Hosted/testable project | **VERIFIED** | [schema-shield.vercel.app](https://schema-shield.vercel.app/) returned HTTP 200 without credentials; its image returned 200 and its analysis API returned the expected offline `HIGH` result with two impacts and no writeback |
 | Public video below three minutes | **PENDING** | YouTube, Vimeo, or Youku URL plus checked encoded duration |
 | Final English Devpost description | **PENDING** | Saved submission fields reviewed in Devpost |

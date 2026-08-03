@@ -92,7 +92,7 @@ See [`evidence/replay.md`](evidence/replay.md) for the complete evidence procedu
 | Requirement | Status | Evidence or next gate |
 | --- | --- | --- |
 | Working DataHub OSS + Agent Context Kit integration | **VERIFIED** | Sanitized trace and hash above |
-| Public Apache-2.0 repository | **PENDING** | Repository content is ready and the license exists at its root; the public URL has not yet been verified |
+| Public Apache-2.0 repository | **VERIFIED** | [github.com/ceodaradigu/schema-shield](https://github.com/ceodaradigu/schema-shield) is public; unauthenticated checks returned the README and license, and GitHub reports `Apache-2.0` |
 | Free, testable project URL | **VERIFIED** | [schema-shield.vercel.app](https://schema-shield.vercel.app/) returned HTTP 200 in an unauthenticated check; its analysis API returned `HIGH`, 2 impacted assets, and `writeback_plan.applied=false` for the rename fixture |
 | Public demonstration video under 3 minutes | **PENDING** | No YouTube, Vimeo, or Youku URL verified yet |
 | English project description | **IN PROGRESS** | This README is English; final Devpost copy is not yet verified |
