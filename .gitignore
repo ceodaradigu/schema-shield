@@ -29,11 +29,10 @@ build/
 *.tmp
 artifacts/
 evidence/generated/
+submission/
 
 # Editor and operating-system noise
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/
-
-.vercel
