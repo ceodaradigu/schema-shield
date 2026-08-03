@@ -1,0 +1,24 @@
+{
+  "affected_query_ids": [],
+  "block_merge": false,
+  "breaking": false,
+  "change_id": "chg-002-add-nullable-note",
+  "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:snowflake,acme.orders,PROD)",
+  "findings": [
+    {
+      "evidence_refs": [
+        "catalog_snapshot.json#/entities/0"
+      ],
+      "reason": "BACKWARD_COMPATIBLE_ADDITION"
+    }
+  ],
+  "impacted_entities": [],
+  "manual_review_required": false,
+  "mode": "offline_snapshot",
+  "notice": "OFFLINE SNAPSHOT — NO LIVE DATAHUB WRITEBACK",
+  "reasons": [
+    "BACKWARD_COMPATIBLE_ADDITION"
+  ],
+  "risk": "LOW",
+  "run_id": "bebc4e8cc9f2b5ad0dfd0e9f06a3f18f9cc9ddfb110f64d04136bcec89f120e8"
+}

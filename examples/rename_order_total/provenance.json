@@ -1,0 +1,18 @@
+{
+  "as_of": "2026-08-03T00:00:00Z",
+  "input_hashes": {
+    "catalog_snapshot": "c7163aaa45d17ef8df64a84fb47994c5e16d654089da198b8f6e3b6c0a86fba9",
+    "policy": "6f1122c6f60868a2f349d824527d05de5e1e41fe17dd43bd80002c8afc455259",
+    "schema_change": "6fcce1fe64c5399c53fa7eea927ac9d398a971c35a7c9b0b649ae4d66c843c71"
+  },
+  "mode": "offline_snapshot",
+  "notice": "OFFLINE SNAPSHOT — NO LIVE DATAHUB WRITEBACK",
+  "run_id": "c12dd643185f63b8f9c7b65ddcd408e8f9c85bb2a9cd68ebb91a5f20c4f4f76e",
+  "source": {
+    "captured_at": "2026-08-03T00:00:00Z",
+    "content_sha256": "c7163aaa45d17ef8df64a84fb47994c5e16d654089da198b8f6e3b6c0a86fba9",
+    "fixture_id": "rename-order-total",
+    "kind": "synthetic_fixture",
+    "mode": "offline_snapshot"
+  }
+}

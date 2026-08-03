@@ -1,0 +1,56 @@
+{
+  "affected_query_ids": [
+    "q-900"
+  ],
+  "block_merge": true,
+  "breaking": true,
+  "change_id": "chg-003-lossy-fare-amount",
+  "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,taxi.trips,PROD)",
+  "findings": [
+    {
+      "evidence_refs": [
+        "catalog_snapshot.json#/lineage/0"
+      ],
+      "reason": "DOWNSTREAM_DATASET_LINEAGE"
+    },
+    {
+      "evidence_refs": [
+        "catalog_snapshot.json#/entities/0"
+      ],
+      "reason": "LOSSY_TYPE_CHANGE"
+    },
+    {
+      "evidence_refs": [
+        "catalog_snapshot.json#/owners"
+      ],
+      "reason": "MISSING_OWNER"
+    },
+    {
+      "evidence_refs": [
+        "catalog_snapshot.json#/entities/1"
+      ],
+      "reason": "PRODUCTION_ML_DEPENDENCY"
+    },
+    {
+      "evidence_refs": [
+        "catalog_snapshot.json#/queries/0"
+      ],
+      "reason": "QUERY_REFERENCE"
+    }
+  ],
+  "impacted_entities": [
+    "urn:li:mlModel:(urn:li:dataPlatform:mlflow,fare_predictor_v1,PROD)"
+  ],
+  "manual_review_required": true,
+  "mode": "offline_snapshot",
+  "notice": "OFFLINE SNAPSHOT — NO LIVE DATAHUB WRITEBACK",
+  "reasons": [
+    "DOWNSTREAM_DATASET_LINEAGE",
+    "LOSSY_TYPE_CHANGE",
+    "MISSING_OWNER",
+    "PRODUCTION_ML_DEPENDENCY",
+    "QUERY_REFERENCE"
+  ],
+  "risk": "CRITICAL",
+  "run_id": "fd884df2df21937ebee2d9e8fde2b6e0f29140db5f7147dca051c57e09a56347"
+}

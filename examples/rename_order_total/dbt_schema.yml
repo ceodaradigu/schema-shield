@@ -1,0 +1,7 @@
+# OFFLINE SNAPSHOT — NO LIVE DATAHUB WRITEBACK
+version: 2
+models:
+  - name: orders_compat
+    columns:
+      - name: order_total
+        description: "Compatibility alias for gross_amount."

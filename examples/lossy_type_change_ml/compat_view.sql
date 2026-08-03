@@ -1,0 +1,2 @@
+-- OFFLINE SNAPSHOT — NO LIVE DATAHUB WRITEBACK
+-- Unsafe lossy type change; no automatic compatibility SQL generated.

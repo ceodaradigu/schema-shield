@@ -1,0 +1,44 @@
+{
+  "affected_query_ids": [
+    "q-001"
+  ],
+  "block_merge": false,
+  "breaking": true,
+  "change_id": "chg-001-rename-order-total",
+  "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:snowflake,acme.orders,PROD)",
+  "findings": [
+    {
+      "evidence_refs": [
+        "catalog_snapshot.json#/entities/0"
+      ],
+      "reason": "COLUMN_RENAME"
+    },
+    {
+      "evidence_refs": [
+        "catalog_snapshot.json#/lineage/0",
+        "catalog_snapshot.json#/lineage/1"
+      ],
+      "reason": "DOWNSTREAM_DATASET_LINEAGE"
+    },
+    {
+      "evidence_refs": [
+        "catalog_snapshot.json#/queries/0"
+      ],
+      "reason": "QUERY_REFERENCE"
+    }
+  ],
+  "impacted_entities": [
+    "urn:li:dashboard:(looker,revenue_dashboard)",
+    "urn:li:dataset:(urn:li:dataPlatform:dbt,acme.order_facts,PROD)"
+  ],
+  "manual_review_required": true,
+  "mode": "offline_snapshot",
+  "notice": "OFFLINE SNAPSHOT — NO LIVE DATAHUB WRITEBACK",
+  "reasons": [
+    "COLUMN_RENAME",
+    "DOWNSTREAM_DATASET_LINEAGE",
+    "QUERY_REFERENCE"
+  ],
+  "risk": "HIGH",
+  "run_id": "c12dd643185f63b8f9c7b65ddcd408e8f9c85bb2a9cd68ebb91a5f20c4f4f76e"
+}

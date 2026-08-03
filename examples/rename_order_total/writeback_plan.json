@@ -1,0 +1,20 @@
+{
+  "actions": [
+    {
+      "action": "add_tags",
+      "applied": false,
+      "status": "pending_approval",
+      "tag": "schema-change-risk-high",
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:snowflake,acme.orders,PROD)"
+    },
+    {
+      "action": "save_document",
+      "applied": false,
+      "status": "pending_approval",
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:snowflake,acme.orders,PROD)"
+    }
+  ],
+  "applied": false,
+  "mode": "offline_snapshot",
+  "notice": "OFFLINE SNAPSHOT — NO LIVE DATAHUB WRITEBACK"
+}

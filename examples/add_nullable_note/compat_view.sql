@@ -1,0 +1,2 @@
+-- OFFLINE SNAPSHOT — NO LIVE DATAHUB WRITEBACK
+-- No compatibility view required.
