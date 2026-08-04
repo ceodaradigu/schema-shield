@@ -173,8 +173,8 @@ These gates must remain separate. Do not infer one from another.
 | --- | --- | --- |
 | `LIVE_DATAHUB_VERIFIED` | **VERIFIED** | `evidence/live-tool-trace.jsonl` plus SHA-256 above |
 | `OFFLINE_REVISION_REPLAYED` | **REPLAY ON FINAL REVISION** | Fresh test/CLI output and exit codes |
-| `PUBLIC_REPO_VERIFIED` | **PENDING** | Public URL, accessible without authentication, Apache-2.0 visible |
-| `HOSTED_DEMO_VERIFIED` | **PENDING** | Free test URL opened in a clean session |
+| `PUBLIC_REPO_VERIFIED` | **VERIFIED** | https://github.com/ceodaradigu/schema-shield; public unauthenticated access and Apache-2.0 recorded in README/claims boundary |
+| `HOSTED_DEMO_VERIFIED` | **VERIFIED** | https://schema-shield.vercel.app/; public HTTP 200 and deterministic rename replay recorded |
 | `VIDEO_VERIFIED` | **PENDING** | Public YouTube/Vimeo/Youku URL and encoded duration below 3:00 |
 | `DEVPOST_SUBMITTED` | **PENDING** | Submission confirmation, not registration alone |
 

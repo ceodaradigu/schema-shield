@@ -93,9 +93,9 @@ Only say “public repository” or show a hosted URL after those URLs have been
 
 Fill every field from a real rehearsal. Leave unverified external items as `PENDING`.
 
-- Rehearsal date/time:
-- Encoded duration:
-- Commit or source-file hashes:
+- Rehearsal date/time: 2026-08-04 (Europe/Madrid)
+- Encoded duration: 156.379362 seconds (2:36.38)
+- Commit or source-file hashes: final MP4 SHA-256 `B9604B715244BA220591BF2917E6E8D7941E0CEE22A0683B9A8322061DE07954`
 - Node and Python versions:
 - Docker version:
 - DataHub server version and commit:
@@ -103,11 +103,11 @@ Fill every field from a real rehearsal. Leave unverified external items as `PEND
 - Test command and exit code:
 - CLI command and exit code:
 - Live adapter command and exit code:
-- Fixture shown:
-- Observed findings:
+- Fixture shown: `rename_order_total` / public replay label `Revenue field rename`
+- Observed findings: `HIGH`; breaking `Yes`; two impacted assets; one affected query reference; zero writebacks applied; compatibility SQL displayed
 - Trace path and SHA-256:
-- Public repository URL: **PENDING**
-- Hosted/test URL: **PENDING**
+- Public repository URL: **VERIFIED** — https://github.com/ceodaradigu/schema-shield
+- Hosted/test URL: **VERIFIED** — https://schema-shield.vercel.app/
 - Public video URL: **PENDING**
-- Devpost submission status: **PENDING**
-- Known limitations:
+- Devpost submission status: **DRAFT** — 3/5 steps recorded; no final submission claim
+- Known limitations: public replay is an offline deterministic demo; the live DataHub adapter and artifact generator are separate execution surfaces; no production-readiness or DataHub Cloud claim; publication URL remains pending
