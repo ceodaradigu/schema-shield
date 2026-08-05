@@ -1,0 +1,146 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Schema Change Risk",
+    "version": "1.0.0",
+    "description": "Deterministically scores a proposed database schema change against the lineage and query snapshot supplied in the request. No database or catalog is accessed or modified.",
+    "termsOfService": "https://www.daradigu.com/terms",
+    "contact": {
+      "name": "RELAUNCH DEPT.",
+      "email": "kai.asistente.david@gmail.com",
+      "url": "https://www.daradigu.com"
+    }
+  },
+  "servers": [
+    { "url": "https://schema-shield.vercel.app/api" }
+  ],
+  "paths": {
+    "/risk": {
+      "post": {
+        "summary": "Analyze a schema change",
+        "description": "Returns LOW, MEDIUM, HIGH, or CRITICAL risk plus multi-hop impacted entities, affected queries, reasons, and optional compatibility SQL.",
+        "operationId": "analyzeSchemaChange",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/AnalyzeRequest" },
+              "example": {
+                "root": "orders",
+                "dataset": "analytics.orders",
+                "operation": { "type": "rename", "from": "order_total", "to": "gross_amount" },
+                "entities": [
+                  { "id": "orders", "type": "dataset", "environment": "PROD" },
+                  { "id": "order_facts", "type": "dataset", "environment": "PROD" },
+                  { "id": "revenue_dashboard", "type": "dashboard", "environment": "PROD" }
+                ],
+                "lineage": [
+                  { "upstream": "orders", "downstream": "order_facts" },
+                  { "upstream": "order_facts", "downstream": "revenue_dashboard" }
+                ],
+                "queries": [
+                  { "id": "q-1", "entity": "orders", "fields": ["order_total"] }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Risk analysis completed",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/AnalyzeResponse" } } }
+          },
+          "400": { "description": "Invalid input" },
+          "401": { "description": "Request was not sent through the configured marketplace" }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Entity": {
+        "type": "object",
+        "required": ["id", "type"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string", "enum": ["dataset", "dashboard", "ml_model", "report", "pipeline"] },
+          "environment": { "type": "string" }
+        }
+      },
+      "LineageEdge": {
+        "type": "object",
+        "required": ["upstream", "downstream"],
+        "properties": {
+          "upstream": { "type": "string" },
+          "downstream": { "type": "string" }
+        }
+      },
+      "QueryReference": {
+        "type": "object",
+        "required": ["id", "entity", "fields"],
+        "properties": {
+          "id": { "type": "string" },
+          "entity": { "type": "string" },
+          "fields": { "type": "array", "items": { "type": "string" } }
+        }
+      },
+      "AnalyzeRequest": {
+        "type": "object",
+        "required": ["root", "dataset", "operation", "entities"],
+        "properties": {
+          "root": { "type": "string" },
+          "dataset": { "type": "string", "example": "analytics.orders" },
+          "operation": {
+            "oneOf": [
+              {
+                "type": "object",
+                "required": ["type", "from", "to"],
+                "properties": {
+                  "type": { "type": "string", "enum": ["rename"] },
+                  "from": { "type": "string" },
+                  "to": { "type": "string" }
+                }
+              },
+              {
+                "type": "object",
+                "required": ["type", "field", "lossy"],
+                "properties": {
+                  "type": { "type": "string", "enum": ["type_change"] },
+                  "field": { "type": "string" },
+                  "lossy": { "type": "boolean" }
+                }
+              },
+              {
+                "type": "object",
+                "required": ["type", "field", "nullable"],
+                "properties": {
+                  "type": { "type": "string", "enum": ["add"] },
+                  "field": { "type": "string" },
+                  "nullable": { "type": "boolean" }
+                }
+              }
+            ]
+          },
+          "entities": { "type": "array", "maxItems": 200, "items": { "$ref": "#/components/schemas/Entity" } },
+          "lineage": { "type": "array", "maxItems": 500, "items": { "$ref": "#/components/schemas/LineageEdge" } },
+          "queries": { "type": "array", "maxItems": 200, "items": { "$ref": "#/components/schemas/QueryReference" } }
+        }
+      },
+      "AnalyzeResponse": {
+        "type": "object",
+        "properties": {
+          "risk": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] },
+          "breaking": { "type": "boolean" },
+          "block_merge": { "type": "boolean" },
+          "manual_review_required": { "type": "boolean" },
+          "impacted_entities": { "type": "array", "items": { "type": "string" } },
+          "affected_query_ids": { "type": "array", "items": { "type": "string" } },
+          "reasons": { "type": "array", "items": { "type": "string" } },
+          "compatibility_sql": { "type": "string", "nullable": true },
+          "mode": { "type": "string", "enum": ["user_supplied_snapshot"] },
+          "notice": { "type": "string" }
+        }
+      }
+    }
+  }
+}
