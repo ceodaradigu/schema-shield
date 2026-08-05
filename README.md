@@ -2,6 +2,10 @@
 
 SchemaShield is a schema-change PR guard for data teams. It inspects catalog context before a risky change is merged, explains the blast radius, generates reviewable compatibility artifacts, and can write the decision back to DataHub.
 
+## Use the hosted API
+
+The deterministic schema-risk endpoint is available through [RapidAPI](https://rapidapi.com/kaiasistentedavid/api/schema-change-risk). Start with the free BASIC tier for evaluation, then use a paid plan for higher request volumes. The [OpenAPI definition](https://schema-shield.vercel.app/schema-change-risk.openapi.json) documents the request and response contract.
+
 The submitted scenario is deliberately synthetic: renaming `order_total` to `gross_amount` on a DEV dataset with one-hop and two-hop downstream dependencies. No production catalog data, private metadata, or credentials are included.
 
 ## What is implemented
