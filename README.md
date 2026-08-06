@@ -100,7 +100,7 @@ See [`evidence/replay.md`](evidence/replay.md) for the complete evidence procedu
 | Working DataHub OSS + Agent Context Kit integration | **VERIFIED** | Sanitized trace and hash above |
 | Public Apache-2.0 repository | **VERIFIED** | [github.com/ceodaradigu/schema-shield](https://github.com/ceodaradigu/schema-shield) is public; unauthenticated checks returned the README and license, and GitHub reports `Apache-2.0` |
 | Free, testable project URL | **VERIFIED** | [schema-shield.vercel.app](https://schema-shield.vercel.app/) returned HTTP 200 in an unauthenticated check; its analysis API returned `HIGH`, 2 impacted assets, and `writeback_plan.applied=false` for the rename fixture |
-| Public demonstration video under 3 minutes | **PENDING** | Local final `video/schemashield-demo-v1.mp4` is validated at 156.379362 seconds (2:36.38), H.264/AAC, 1280x720; a public YouTube, Vimeo, or Youku URL is still required |
+| Public demonstration video under 3 minutes | **VERIFIED** | [youtu.be/b--jn9qD5tE](https://youtu.be/b--jn9qD5tE) opened publicly with the expected SchemaShield title; local final `video/schemashield-demo-v1.mp4` is validated at 156.379362 seconds (2:36.38), H.264/AAC, 1280x720 |
 | English project description | **IMPLEMENTED** | Reviewed source copy is in `evidence/devpost-submission-copy.md`; it is not externally verified until saved and reviewed in Devpost |
 | Sample generated outputs in `examples/` | **VERIFIED** | Three fixture directories, each containing the seven expected artifacts; overwrite refusal also verified |
 | Devpost submission | **PENDING** | Registration is not proof of a submitted project |

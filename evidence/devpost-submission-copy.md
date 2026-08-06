@@ -70,7 +70,7 @@ DataHub OSS, DataHub Agent Context Kit, DataHub Python SDK, Python, Node.js, Typ
 
 - Live demo: https://schema-shield.vercel.app/
 - Source: https://github.com/ceodaradigu/schema-shield
-- Public video: **PENDING**
+- Public video: https://youtu.be/b--jn9qD5tE
 
 ## Demonstration and AI disclosure
 
