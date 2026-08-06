@@ -175,7 +175,7 @@ These gates must remain separate. Do not infer one from another.
 | `OFFLINE_REVISION_REPLAYED` | **REPLAY ON FINAL REVISION** | Fresh test/CLI output and exit codes |
 | `PUBLIC_REPO_VERIFIED` | **VERIFIED** | https://github.com/ceodaradigu/schema-shield; public unauthenticated access and Apache-2.0 recorded in README/claims boundary |
 | `HOSTED_DEMO_VERIFIED` | **VERIFIED** | https://schema-shield.vercel.app/; public HTTP 200 and deterministic rename replay recorded |
-| `VIDEO_VERIFIED` | **PENDING** | Public YouTube/Vimeo/Youku URL and encoded duration below 3:00 |
+| `VIDEO_VERIFIED` | **VERIFIED** | https://youtu.be/b--jn9qD5tE opened publicly with the expected title; local encoded duration 156.379362 seconds (2:36.38), H.264/AAC, 1280x720 |
 | `DEVPOST_SUBMITTED` | **PENDING** | Submission confirmation, not registration alone |
 
 If a live replay fails, record `LIVE_INTEGRATION_FAILED` with the concrete error. Never relabel an offline result as a live fallback success.

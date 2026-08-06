@@ -108,6 +108,6 @@ Fill every field from a real rehearsal. Leave unverified external items as `PEND
 - Trace path and SHA-256:
 - Public repository URL: **VERIFIED** — https://github.com/ceodaradigu/schema-shield
 - Hosted/test URL: **VERIFIED** — https://schema-shield.vercel.app/
-- Public video URL: **PENDING**
+- Public video URL: **VERIFIED** — https://youtu.be/b--jn9qD5tE
 - Devpost submission status: **DRAFT** — 3/5 steps recorded; no final submission claim
-- Known limitations: public replay is an offline deterministic demo; the live DataHub adapter and artifact generator are separate execution surfaces; no production-readiness or DataHub Cloud claim; publication URL remains pending
+- Known limitations: public replay is an offline deterministic demo; the live DataHub adapter and artifact generator are separate execution surfaces; no production-readiness or DataHub Cloud claim
