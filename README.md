@@ -101,11 +101,11 @@ See [`evidence/replay.md`](evidence/replay.md) for the complete evidence procedu
 | Public Apache-2.0 repository | **VERIFIED** | [github.com/ceodaradigu/schema-shield](https://github.com/ceodaradigu/schema-shield) is public; unauthenticated checks returned the README and license, and GitHub reports `Apache-2.0` |
 | Free, testable project URL | **VERIFIED** | [schema-shield.vercel.app](https://schema-shield.vercel.app/) returned HTTP 200 in an unauthenticated check; its analysis API returned `HIGH`, 2 impacted assets, and `writeback_plan.applied=false` for the rename fixture |
 | Public demonstration video under 3 minutes | **VERIFIED** | [youtu.be/b--jn9qD5tE](https://youtu.be/b--jn9qD5tE) opened publicly with the expected SchemaShield title; local final `video/schemashield-demo-v1.mp4` is validated at 156.379362 seconds (2:36.38), H.264/AAC, 1280x720 |
-| English project description | **IMPLEMENTED** | Reviewed source copy is in `evidence/devpost-submission-copy.md`; it is not externally verified until saved and reviewed in Devpost |
+| English project description | **VERIFIED** | Reviewed source copy is in `evidence/devpost-submission-copy.md`; the public Devpost page exposes the final English title, description, project links, video, and DataHub submission context |
 | Sample generated outputs in `examples/` | **VERIFIED** | Three fixture directories, each containing the seven expected artifacts; overwrite refusal also verified |
-| Devpost submission | **PENDING** | Registration is not proof of a submitted project |
+| Devpost submission | **VERIFIED** | [devpost.com/software/schemashield](https://devpost.com/software/schemashield) returned HTTP 200 with the expected project title, DataHub hackathon link, demo, repository, and public video; Devpost also sent `Submission confirmed: SchemaShield` to the registered account |
 
-Before submission, the public repository must contain all source, assets, and setup instructions; Apache-2.0 must be visible at the top of the repository page; the test surface must remain free and accessible through the judging period; and any starter or pre-existing code used must be disclosed. All submission materials must be in English or include an English translation.
+The submitted public repository contains the source, assets, setup instructions, and Apache-2.0 license. The test surface must remain free and accessible through the judging period, and any starter or pre-existing code used must remain disclosed. All submission materials must remain in English or include an English translation.
 
 ## Official judging map
 
