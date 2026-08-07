@@ -1,6 +1,6 @@
 # SchemaShield — Devpost submission copy
 
-This file is the reviewed English source copy for the active Devpost draft. Saving it here does not prove that Devpost has received or published it.
+This file is the reviewed English source copy for the submitted Devpost entry. This local file alone is not proof of receipt; the public project page and Devpost confirmation email are the authoritative submission evidence recorded in `claims-boundary.md`.
 
 ## Project name
 
