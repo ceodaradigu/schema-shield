@@ -1,0 +1,26 @@
+name: action-smoke
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: schema-shield
+        uses: ./
+        with:
+          fixture: fixtures/rename_order_total.mjs
+          output-directory: action-smoke-artifacts
+          fail-on: critical
+      - name: Verify action outputs
+        shell: bash
+        env:
+          RISK: ${{ steps.schema-shield.outputs.risk }}
+        run: test "$RISK" = "HIGH" && test -f action-smoke-artifacts/impact_report.json
