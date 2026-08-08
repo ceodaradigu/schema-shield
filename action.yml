@@ -15,7 +15,7 @@ inputs:
     required: false
     default: schema-shield-artifacts
   fail-on:
-    description: Failure threshold: never, breaking, medium, high, or critical.
+    description: "Failure threshold: never, breaking, medium, high, or critical."
     required: false
     default: critical
   force:
