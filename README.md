@@ -105,6 +105,24 @@ overwritten unless `force: true` is supplied. The action always labels its resul
 `OFFLINE SNAPSHOT — NO LIVE DATAHUB WRITEBACK` and never performs catalog
 writeback.
 
+#### Local action or hosted API?
+
+Use the action above when your review input already lives in the repository and
+must stay inside the GitHub runner. If several repositories need one hosted JSON
+endpoint instead, the same deterministic risk decision is available through the
+[Schema Change Risk plans on RapidAPI](https://rapidapi.com/kaiasistentedavid/api/schema-change-risk/pricing):
+
+| Plan | Monthly requests | Price |
+| --- | ---: | ---: |
+| BASIC | 50 | $0 |
+| PRO | 2,000 | $19/month |
+| ULTRA | 10,000 | $49/month |
+| MEGA | 50,000 | $99/month |
+
+Start with BASIC on a representative synthetic migration. A subscription is not
+required to use this Apache-2.0 action, and the local action never sends fixture
+contents to RapidAPI.
+
 ### DataHub OSS + Agent Context Kit round trip
 
 Prerequisites are Python, a working Docker daemon, and a local DataHub OSS quickstart.
