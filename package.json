@@ -10,7 +10,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "node --test tests/core.test.mjs tests/schema-risk.test.mjs tests/web.test.mjs",
+    "test": "node --test tests/action.test.mjs tests/core.test.mjs tests/schema-risk.test.mjs tests/web.test.mjs",
     "check": "npm run test && npm run build"
   },
   "dependencies": {

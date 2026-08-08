@@ -73,6 +73,38 @@ node "$root\cli.mjs" `
 
 The CLI refuses to overwrite an existing artifact set unless `--force` is passed.
 
+### GitHub Actions preflight
+
+SchemaShield can run in a pull request without a service account or live catalog
+connection. The action accepts an explicitly labeled synthetic/offline fixture,
+generates the same seven review artifacts, writes a step summary, and exposes the
+risk decision as workflow outputs.
+
+```yaml
+permissions:
+  contents: read
+
+steps:
+  - uses: actions/checkout@v4
+  - id: schema-shield
+    uses: ceodaradigu/schema-shield@v1
+    with:
+      fixture: fixtures/rename_order_total.mjs
+      output-directory: schema-shield-artifacts
+      fail-on: critical
+  - uses: actions/upload-artifact@v4
+    if: always()
+    with:
+      name: schema-shield-review
+      path: schema-shield-artifacts
+```
+
+`fail-on` accepts `never`, `breaking`, `medium`, `high`, or `critical`. Input and
+output paths must remain inside `GITHUB_WORKSPACE`; existing artifacts are not
+overwritten unless `force: true` is supplied. The action always labels its result
+`OFFLINE SNAPSHOT — NO LIVE DATAHUB WRITEBACK` and never performs catalog
+writeback.
+
 ### DataHub OSS + Agent Context Kit round trip
 
 Prerequisites are Python, a working Docker daemon, and a local DataHub OSS quickstart.

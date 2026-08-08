@@ -1,0 +1,54 @@
+name: SchemaShield Offline Preflight
+description: Generate evidence-backed schema-risk artifacts and optionally block risky changes.
+author: RELAUNCH DEPT.
+
+branding:
+  icon: shield
+  color: blue
+
+inputs:
+  fixture:
+    description: Path to an ESM fixture that exports schemaChange, catalogSnapshot, and policy.
+    required: true
+  output-directory:
+    description: Workspace-relative directory for the seven generated review artifacts.
+    required: false
+    default: schema-shield-artifacts
+  fail-on:
+    description: Failure threshold: never, breaking, medium, high, or critical.
+    required: false
+    default: critical
+  force:
+    description: Replace SchemaShield artifacts already present in the output directory.
+    required: false
+    default: "false"
+
+outputs:
+  risk:
+    description: LOW, MEDIUM, HIGH, or CRITICAL.
+    value: ${{ steps.preflight.outputs.risk }}
+  breaking:
+    description: Whether the fixture describes a breaking change.
+    value: ${{ steps.preflight.outputs.breaking }}
+  block-merge:
+    description: Whether the current policy marks the change as merge-blocking.
+    value: ${{ steps.preflight.outputs.block-merge }}
+  run-id:
+    description: Deterministic SHA-256 identifier for the analyzed inputs.
+    value: ${{ steps.preflight.outputs.run-id }}
+  artifact-directory:
+    description: Absolute path to the generated artifact directory.
+    value: ${{ steps.preflight.outputs.artifact-directory }}
+
+runs:
+  using: composite
+  steps:
+    - id: preflight
+      shell: bash
+      env:
+        SCHEMA_SHIELD_ACTION_PATH: ${{ github.action_path }}
+        SCHEMA_SHIELD_FAIL_ON: ${{ inputs.fail-on }}
+        SCHEMA_SHIELD_FIXTURE: ${{ inputs.fixture }}
+        SCHEMA_SHIELD_FORCE: ${{ inputs.force }}
+        SCHEMA_SHIELD_OUTPUT_DIRECTORY: ${{ inputs.output-directory }}
+      run: node "$SCHEMA_SHIELD_ACTION_PATH/action/run.mjs"
