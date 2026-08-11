@@ -8,6 +8,13 @@ Try the browser experience and compare free and paid access at [daradigu.com/sch
 
 The deterministic schema-risk endpoint is available through [RapidAPI](https://rapidapi.com/kaiasistentedavid/api/schema-change-risk). Start with the free BASIC tier for evaluation, then use a paid plan for higher request volumes. The [OpenAPI definition](https://schema-shield.vercel.app/schema-change-risk.openapi.json) documents the request and response contract.
 
+Schema Change Risk has also passed LaunchFree's human review and is permanently
+listed on [The Runway](https://launchfree.io/listings/schema-change-risk.html).
+The listing is the public launch page for this API and can be upvoted during its
+approval week.
+
+[![Listed on The Runway - LaunchFree.io](https://launchfree.io/badge-light.svg)](https://launchfree.io/listings/schema-change-risk.html)
+
 The submitted scenario is deliberately synthetic: renaming `order_total` to `gross_amount` on a DEV dataset with one-hop and two-hop downstream dependencies. No production catalog data, private metadata, or credentials are included.
 
 ## What is implemented
